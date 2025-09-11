@@ -14,7 +14,6 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, "Please enter password."],
-    unique: true,
   },
   isVerified: {
     type: Boolean,
@@ -31,6 +30,5 @@ const userSchema = new mongoose.Schema({
 });
 
 // Since Next.js runs on Edge environment :
-const User =
-  mongoose.models.user || new mongoose.Model("users", userSchema);
+const User = mongoose.models.users || new mongoose.Model("users", userSchema);
 export default User;
