@@ -30,5 +30,5 @@ const userSchema = new mongoose.Schema({
 });
 
 // Since Next.js runs on Edge environment :
-const User = mongoose.models.users || new mongoose.Model("users", userSchema);
+const User = mongoose.models.users || mongoose.model("users", userSchema);
 export default User;

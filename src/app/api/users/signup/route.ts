@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
       email,
       password: hashedPassword,
     });
-    const savedUser = await newUser.Save();
+    const savedUser = await newUser.save();
     console.log(savedUser);
 
     // Send verification mail :
