@@ -11,3 +11,5 @@ export const UserSchema = z.object({
     .min(6, "Password should be of atleast 3 characters.")
     .max(30, "Password shouldn't exceed 30 characters."),
 });
+
+export const LogInSchema = UserSchema.omit({ username: true });

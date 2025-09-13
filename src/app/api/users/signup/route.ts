@@ -2,7 +2,7 @@ import { ConnectDB } from "@/dbConfig/dbConfig";
 import { sendEmail } from "@/helpers/mailer";
 import User from "@/models/userModels";
 import { UserSchema } from "@/schemas";
-import { UserType } from "@/types";
+import { SignUpType } from "@/types";
 import bcrypt from "bcryptjs";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -10,7 +10,7 @@ ConnectDB();
 
 export async function POST(req: NextRequest) {
   try {
-    const body: UserType = await req.json();
+    const body: SignUpType = await req.json();
     const { username, email, password } = body;
 
     // TODO: Validation
