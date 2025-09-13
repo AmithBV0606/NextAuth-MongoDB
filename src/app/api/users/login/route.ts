@@ -1,7 +1,7 @@
 import { ConnectDB } from "@/dbConfig/dbConfig";
 import User from "@/models/userModels";
 import { LogInSchema } from "@/schemas";
-import { LogInType } from "@/types";
+import { LogInType, PayloadType } from "@/types";
 import bcrypt from "bcryptjs";
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Generate JWT :
-    const payload = {
+    const payload: PayloadType = {
       id: user._id,
       username: user.username,
       email: user.email,
