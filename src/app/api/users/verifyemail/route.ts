@@ -1,7 +1,5 @@
 import { ConnectDB } from "@/dbConfig/dbConfig";
 import User from "@/models/userModels";
-import { UserSchema } from "@/schemas";
-import { UserType } from "@/types";
 import { NextRequest, NextResponse } from "next/server";
 
 ConnectDB();
